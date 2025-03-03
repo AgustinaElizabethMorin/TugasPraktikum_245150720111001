@@ -1,0 +1,42 @@
+public class Main {
+    public static void main(String[] args) {
+        // Membuat film
+        Film film1 = new Film("Spider Man", "Action", "10:00", 50000);
+        Film film2 = new Film("Cinderella ", "Fantasi", "12:00", 60000);
+        Film film3 = new Film("Agak Laen", "Comedy", "14:00", 45000);
+
+        // Membuat studio
+        Studio studio1 = new Studio(1, 100, film1);
+        Studio studio2 = new Studio(2, 80, film2);
+        Studio studio3 = new Studio(3, 120, film3);
+
+        // Membuat penonton
+        Penonton penonton1 = new Penonton("Dodi");
+        Penonton penonton2 = new Penonton("Sasmitha");
+        Penonton penonton3 = new Penonton("William");
+
+        // Membuat tiket
+        Tiket tiket1 = new Tiket("T001", film1, studio1, 1, penonton1);
+        Tiket tiket2 = new Tiket("T002", film2, studio2, 2, penonton2);
+        Tiket tiket3 = new Tiket("T003", film3, studio3, 3, penonton3);
+
+        // Menampilkan informasi tiket dengan format yang lebih rapi
+        System.out.println("Nomor Tiket\tJudul Film\t\tGenre\t\tJam Tayang\tStudio\t\tNomor Kursi\t\tHarga Tiket\t\tNama Penonton");
+        System.out.println("-----------------------------------------------------------------------------------------------------------------------------------------------");
+        //print dalam bentuk format
+        printTiket(tiket1);
+        printTiket(tiket2);
+        printTiket(tiket3);
+    }
+
+    private static void printTiket(Tiket tiket) {
+        System.out.println(tiket.getNomorTiket() + "\t\t" +
+                tiket.getFilm().getJudul() + "\t\t" +
+                tiket.getFilm().getGenre() + "\t\t" +
+                tiket.getFilm().getJamTayang() + "\t\t" +
+                "Studio " + tiket.getStudio().getNomorStudio() + "\t\t" +
+                tiket.getNomorKursi() + "\t\t" + 
+                String.format("%.2f", tiket.getFilm().getHargaTiket()) + "\t\t" +
+                tiket.getPenonton().getNama());
+    }
+    }
