@@ -1,0 +1,40 @@
+public class Tiket {
+    private String nomorTiket; 
+    private Film film; 
+    private Studio studio; 
+    private int nomorKursi; 
+    private Penonton penonton; 
+
+    public Tiket(String nomorTiket, Film film, Studio studio, int nomorKursi, Penonton penonton) {
+        this.nomorTiket = nomorTiket;
+        this.film = film;
+        this.studio = studio;
+        this.nomorKursi = nomorKursi;
+        this.penonton = penonton;
+    }
+
+    // Getter untuk nomorTiket
+    public String getNomorTiket() {
+        return nomorTiket;
+    }
+
+    // Getter untuk film
+    public Film getFilm() {
+        return film;
+    }
+
+    // Getter untuk studio
+    public Studio getStudio() {
+        return studio;
+    }
+
+    // Getter untuk nomorKursi
+    public int getNomorKursi() {
+        return nomorKursi;
+    }
+
+    // Getter untuk penonton
+    public Penonton getPenonton() {
+        return penonton;
+    }
+}
